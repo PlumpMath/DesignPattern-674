@@ -1,0 +1,5 @@
+this pattern has one to many relationship.
+when subject updates, it sends notification to all observers.
+Subject as an arraylist to keep track of all observers. one its updated, it will call update() for each observers.
+Each observers has it's own impletmentation of update().
+Sub not aware of any thing how ob will update their info, Sub just send all info to them.
