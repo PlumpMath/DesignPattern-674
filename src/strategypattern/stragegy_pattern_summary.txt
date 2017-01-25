@@ -1,0 +1,2 @@
+ favor composition over inherriance. This will lead to a more flexible design.
+find the part that has vary implemetation and independently from other parts of code, fit this part into class design as composition.
