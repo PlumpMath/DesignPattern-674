@@ -1,7 +1,0 @@
-The decorator pattern attaches additional responsibilities to an object dynamically.
-Decorators provide a flexible alternative to subclassing for extending functionality.
-
-So the decorator wrap the component class. the decorator also extends from component class so they can be
-treated the same way. decorator has the component class and add its feature on top of that.
-
-Java.io.*   uses this pattern.
