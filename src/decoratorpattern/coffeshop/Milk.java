@@ -1,17 +1,17 @@
 package decoratorpattern.coffeshop;
 
 public class Milk extends CondimentDecorator {
-	Beverage beverage;
+    Beverage beverage;
 
-	public Milk(Beverage beverage) {
-		this.beverage = beverage;
-	}
+    public Milk(Beverage beverage) {
+        this.beverage = beverage;
+    }
 
-	public String getDescription() {
-		return beverage.getDescription() + ", Milk";
-	}
+    public String getDescription() {
+        return beverage.getDescription() + ", Milk";
+    }
 
-	public double cost() {
-		return .10 + beverage.cost();
-	}
+    public double cost() {
+        return .10 + beverage.cost();
+    }
 }

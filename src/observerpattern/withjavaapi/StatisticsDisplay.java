@@ -1,41 +1,41 @@
 package observerpattern.withjavaapi;
 
 import java.util.Observable;
-import java.util.Observer;
 
-public class StatisticsDisplay extends MyObserver implements  DisplayElement {
-	private float maxTemp = 0.0f;
-	private float minTemp = 200;
-	private float tempSum= 0.0f;
-	private int numReadings;
+public class StatisticsDisplay extends MyObserver implements DisplayElement {
+    private float maxTemp = 0.0f;
+    private float minTemp = 200;
+    private float tempSum = 0.0f;
+    private int numReadings;
 
-	public StatisticsDisplay(Observable observable) {
-		super( observable);
-	}
+    public StatisticsDisplay(Observable observable) {
+        super(observable);
+    }
 
-	public StatisticsDisplay(){}
+    public StatisticsDisplay() {
+    }
 
-	public void update(Observable observable, Object arg) {
-		if (observable instanceof WeatherData) {
-			WeatherData weatherData = (WeatherData)observable;
-			float temp = weatherData.getTemperature();
-			tempSum += temp;
-			numReadings++;
+    public void update(Observable observable, Object arg) {
+        if (observable instanceof WeatherData) {
+            WeatherData weatherData = (WeatherData) observable;
+            float temp = weatherData.getTemperature();
+            tempSum += temp;
+            numReadings++;
 
-			if (temp > maxTemp) {
-				maxTemp = temp;
-			}
- 
-			if (temp < minTemp) {
-				minTemp = temp;
-			}
+            if (temp > maxTemp) {
+                maxTemp = temp;
+            }
 
-			display();
-		}
-	}
+            if (temp < minTemp) {
+                minTemp = temp;
+            }
 
-	public void display() {
-		System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings)
-			+ "/" + maxTemp + "/" + minTemp);
-	}
+            display();
+        }
+    }
+
+    public void display() {
+        System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings)
+                + "/" + maxTemp + "/" + minTemp);
+    }
 }
