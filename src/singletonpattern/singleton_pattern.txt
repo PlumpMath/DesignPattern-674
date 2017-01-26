@@ -1,0 +1,10 @@
+The Singleton Pattern is a pattern that ensures that there is only ever one single instance of a class,
+and provide a globle access point to it.
+
+1.use private constructor
+2. use a getInstance() to return this class instance; only method inside this class can call private method (
+private constructor)
+3. thread safe
+3.1 use this way instance will be created once class is loaded in JVM
+private static Singleton uniqueInstance = new Singleton();
+3.2 use synchronized key word
